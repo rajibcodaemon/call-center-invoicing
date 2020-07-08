@@ -1,0 +1,43 @@
+@mixin font-size($value) {
+  font-size: ($value/16)+rem;
+}
+
+@mixin border-radius($radius) {
+  border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+}
+
+@mixin transition($value) {
+  transition: all $value;
+}
+
+@mixin desk {
+  @media (max-width:1299px) {
+    @content;
+  }
+}
+
+@mixin lap {
+  @media (max-width:1199px) {
+    @content;
+  }
+}
+
+@mixin tab {
+  @media (max-width:991px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width:767px) {
+    @content;
+  }
+}
+
+@mixin mobile-small {
+  @media (max-width:599px) {
+    @content;
+  }
+}

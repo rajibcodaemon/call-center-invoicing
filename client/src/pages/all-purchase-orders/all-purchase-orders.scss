@@ -1,0 +1,204 @@
+@import "../../assets/sass/mixin";
+@import "../../assets/sass/variables";
+
+.all-purchase {
+  padding-left: 0px;
+  padding-right: 30px;
+
+  @include mobile {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+}
+
+.data-table-area {
+  padding: 30px 15px 30px 0;
+
+  @include mobile {
+    padding: 15px 0px 15px 15px;
+  }
+
+  .btn-danger {
+    width: auto;
+    height: auto;
+  }
+
+  .btn-primary.create-new-user {
+    background-color: #157ffb;
+    font-weight: bold;
+    @include font-size(14);
+    max-width: 201px;
+    width: 100%;
+    height: 42px;
+  }
+
+  .export {
+    color: $theme-red;
+    font-weight: bold;
+
+    i {
+      margin-left: 10px;
+      @include font-size(18);
+      cursor: pointer;
+    }
+  }
+
+  .hr-scroll {
+    overflow-y: hidden;
+    overflow-x: auto;
+  }
+
+  .table-content {
+    margin-top: 20px;
+    min-width: 1050px;
+
+    header {
+      height: 50px;
+      background-color: #222222;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 10px;
+      color: #fff;
+      font-size: 12px;
+
+      &>div {
+        margin-right: 10px;
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        &:last-child {
+          margin-right: 0px;
+        }
+      }
+    }
+
+    .table-body {
+      @extend header;
+      background-color: #fff;
+      color: #222222;
+
+      .btn {
+        font-weight: bold;
+
+        &.btn-danger {
+          border-radius: auto;
+          &:hover{
+            background-color: $theme-red-hover;
+          }
+        }
+      }
+
+      &>div {
+        margin-right: 10px;
+
+        &:last-child {
+          margin-right: 0px;
+        }
+
+        &.status {
+          font-weight: 700;
+          text-transform: uppercase;
+
+          &.paid {
+            color: #34d293;
+          }
+
+          &.dispatched {
+            color: #157ffb;
+          }
+
+          &.yet-to-pay {
+            color: #dd2d3e;
+          }
+
+          &.visited {
+            color: #ffb93c;
+          }
+        }
+      }
+    }
+
+    .check-box-area {
+      width: 18px;
+    }
+
+    .invoice {
+      min-width: 77px;
+      flex: 1;
+    }
+
+    .fname {
+      min-width: 78px;
+      flex: 1;
+    }
+
+    .lname {
+      min-width: 78px;
+      flex: 1;
+    }
+
+    .email {
+      min-width: 250px;
+      flex: 1;
+    }
+
+    .phone {
+      min-width: 100px;
+      flex:1;
+    }
+
+    .service-type {
+      min-width: 89px;
+      flex:1;
+    }
+
+    .status {
+      min-width: 70px;
+      flex: 1;
+    }
+
+    .amount {
+      min-width: 60px;
+      flex: 1;
+    }
+
+    .data-opened {
+      min-width: 20%;
+      flex: 1;
+    }
+
+    .dispatching-system {
+      width: 123px;
+
+      button {
+        width: 100%;
+      }
+    }
+
+    .edit {
+      width: 30px;
+      color: #888888;
+      @include font-size(20);
+
+      a{
+        color: #888888;
+        text-align: center;
+        width: 30px;
+        transition: all 0.2s;
+        display: block;
+
+        &:hover{
+          color: $theme-red;
+        }
+      }
+
+      i {
+        cursor: pointer;
+        margin: 0 auto;
+      }
+    }
+  }
+}

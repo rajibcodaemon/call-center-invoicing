@@ -1,0 +1,88 @@
+@import "../../assets/sass/mixin";
+@import "../../assets/sass/variables";
+
+.main-header {
+  height: 60px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  background-color: #222222;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+
+  @include mobile-small {
+    height: 40px;
+  }
+
+  .container-fluid {
+    padding: 0 3vw;
+
+    @include mobile-small {
+      padding: 0 15px;
+    }
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 50px;
+
+      @include mobile-small {
+        width: 35px;
+      }
+    }
+
+    figcaption {
+      @include font-size(18);
+      color: $theme-red;
+      font-weight: 700;
+      margin-left: 8px;
+
+      @include mobile-small {
+        margin-left: 8px;
+        @include font-size(15);
+      }
+    }
+  }
+
+  .top-right {
+    @include mobile{
+      display: none;
+    }
+  }
+}
+.header-bars{
+  display: none;
+  justify-content: flex-end;
+  color: #fff;
+  position: relative;
+
+  @include mobile {
+    display: flex;
+  }
+
+  i{
+    @include font-size(20);
+  }
+}
+
+.drop-nav{
+  background-color: #222222;
+  min-width: 250px;
+  position: absolute;
+  top:40px;
+  right: -23px;
+  z-index: 1;
+  display: none;
+
+  @include mobile-small {
+    top:30px;
+  }
+
+  &.open {
+    display: block;
+  }
+}

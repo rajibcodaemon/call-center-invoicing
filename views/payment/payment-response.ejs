@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Payment Process</title>
+  <!-- Bootstrap -->
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="//oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+  <style>
+    .invex {
+      color: #0F3B6E;
+    }
+
+    .minx {
+      color: #E21717;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container" style="margin-top: 50px">
+    <header>
+      <div class="row">
+        <div class="col-lg-6 col-lg-offset-3 text-center">
+          <img src="/images/logo.png" class="img-responsive" />
+        </div>
+      </div>
+    </header>
+    <div class="row" style="margin-top: 10px;">
+      <div class="col-md-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><strong>Payment Response</strong></h3>
+          </div>
+          <div class="panel-body">
+            <div class="container bg-faded">
+              <h1 class="text-center">
+                <% if(contextFlag == '1'){ %>
+                  <i style="font-size: 90px; color:#3c763d;" class="fa fa-check-circle" aria-hidden="true"></i>
+                <% } else{ %>
+                  OOPS..!
+                <% } %>
+                </h1>
+              <div class="row">
+                <div class="col-xs-12">
+                  <div class="center-block well text-center hidden-sm hidden-xs" style="width: 80%">
+                    <% if(contextFlag == '1'){ %>
+                    <div class="" role="alert">
+                      <div>                        
+                        <p class="text-justify">
+                          Payment Received! from Card <%=newPaymentResponse.card_number %> of amount $ <%=newPaymentResponse.amount %> for invoice <%=newPaymentResponse.invoice_id %>
+                        </p>
+                        <p class="text-left"><strong>CONFIRMATION NUMBER: <%=newPaymentResponse.unique_ref %></strong></p>
+                        <P class="text-justify">Your service call dispatch is now in progress.</P>
+                      </div>
+                    </div>
+                    <% } %>
+                    <% if(contextFlag == '2'){ %>
+                    <div class="text-justify" role="alert">
+                      PAYMENT DECLINED! Please try again with another card. Bank response: <%=responseText %>
+                    </div>
+                    <% } %>
+                    <% if(contextFlag == '3'){ %>
+                    <div class="alert alert-info" role="alert">
+                      PAYMENT ALREADY MADE FOR INVOICE <%= invoice_id %>.
+                    </div>
+                    <% } %>                    
+                  </div>
+
+                  <div class="center-block well text-center hidden-lg hidden-md" style="width: 99%">
+                    <% if(contextFlag == '1'){ %>
+                    <div class="" role="alert">
+                      <div>
+                        <p class="text-justify">
+                          Payment Received! from Card <%=newPaymentResponse.card_number %> of amount $ <%=newPaymentResponse.amount %> for invoice <%=newPaymentResponse.invoice_id %>
+                        </p>
+                        <p class="text-left"><strong>CONFIRMATION NUMBER: <%=newPaymentResponse.unique_ref %></strong></p>
+                        <P class="text-justify">Your service call dispatch is now in progress.</P>
+                      </div>
+                    </div>
+                    <% } %>
+                    <% if(contextFlag == '2'){ %>
+                    <div class="text-justify" role="alert">
+                      PAYMENT DECLINED! Please try again with another card. Bank response: <%=responseText %>
+                    </div>
+                    <% } %>
+                    <% if(contextFlag == '3'){ %>
+                    <div class="text-justify" role="alert">
+                      PAYMENT ALREADY MADE FOR INVOICE <%= invoice_id %>.
+                    </div>
+                    <% } %>                    
+                  </div>
+
+                </div>
+              </div>
+              <!-- <div class="row">
+                <div class="col-xs-12" style="color:#000; font-size: 22px; text-decoration: none">
+                  <div class="center-block well text-center" style="width: 80%">Call
+                    <a href="tel: +1-(702)-786-0242">+1-(702)-786-0242 </a>
+                  </div>
+                </div>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+
+</html>

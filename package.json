@@ -1,0 +1,51 @@
+{
+  "name": "node-ejs",
+  "version": "1.0.0",
+  "description": "Call center invoicing project for Mike Syed",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "server": "nodemon index.js",
+    "client": "npm start --prefix client",
+    "clientinstall": "npm install --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "keywords": [
+    "call",
+    "center",
+    "invoicing"
+  ],
+  "author": "Aninda Kar",
+  "license": "ISC",
+  "dependencies": {
+    "@sendgrid/mail": "^6.4.0",
+    "bcryptjs": "^2.4.3",
+    "config": "^3.2.2",
+    "cors": "^2.8.5",
+    "date-and-time": "^0.10.0",
+    "dotenv": "^8.1.0",
+    "ejs": "^1.0.0",
+    "express": "^4.6.1",
+    "express-validator": "^6.1.1",
+    "generate-password": "^1.4.2",
+    "google-distance-matrix": "^1.1.1",
+    "helmet": "^3.21.0",
+    "json2csv": "^4.5.3",
+    "jsonwebtoken": "^8.5.1",
+    "md5": "^2.2.1",
+    "moment": "^2.24.0",
+    "mysql2": "^1.6.5",
+    "node-fetch": "^2.6.0",
+    "node-url-shortener": "^1.0.1",
+    "react-content-loader": "^4.3.0",
+    "react-iframe": "^1.8.0",
+    "react-places-autocomplete": "^7.2.1",
+    "request-promise": "^4.2.4",
+    "twilio": "^3.34.0"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.1",
+    "nodemon": "^1.19.1"
+  }
+}

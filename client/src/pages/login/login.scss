@@ -1,0 +1,52 @@
+@import "../../assets/sass/mixin";
+
+.login-wrap {
+  background: url("../../assets/img/login-bg.jpg") center center no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .login-area {
+    width: 390px;
+
+    @include mobile-small{
+      width: 90vw;
+    }
+
+    .logo {
+      text-align: center;
+
+      img {
+        width: 100px;
+        margin: 0 auto 10px;
+
+        @include mobile-small{
+          width: 90px;
+        }
+      }
+
+      figcaption {
+        color: #fff;
+        @include font-size(30);
+        font-weight: 400;
+        margin-bottom: 20px;
+        @include mobile-small{
+          @include font-size(24);
+        }
+      }
+    }
+
+    .login-form-area {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 50px 15px 40px;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+
+      @include mobile-small{
+        padding: 8vh 3vw 5vh; 
+      }
+    }
+  }
+}

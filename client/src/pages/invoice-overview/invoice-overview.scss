@@ -1,0 +1,48 @@
+@import "../../assets/sass/mixin";
+@import "../../assets/sass/variables";
+
+.alert-area {
+  background-color: rgba(221, 45, 62, 0.2);
+  color: $theme-red;
+  @include font-size(20);
+  padding: 15px 20px;
+  @include border-radius(3px);
+  margin-bottom: 50px;
+  margin-top: -25px;
+
+  @include mobile-small {
+    @include font-size(16);
+    margin-bottom: 30px;
+  }
+}
+
+.resend-buttons-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+
+  @include mobile-small {
+    display: block;
+    margin-top: 15px;
+  }
+
+  .btn {
+    text-transform: uppercase;
+    max-width: 220px;
+    margin-right: 20px;
+
+    @include mobile-small {
+      margin-right: 0px;
+      margin-bottom: 10px;
+      max-width: 100%;
+    }
+
+    &:last-child {
+      margin-right: 0px;
+      @include mobile-small {
+        margin-bottom: 0px;
+      }
+    }
+  }
+}

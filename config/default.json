@@ -1,0 +1,7 @@
+{
+  "DB_HOST": "localhost",
+  "DB_USER": "aninda",
+  "DB_PASSWORD": "aninda",
+  "DB_NAME": "ContactKeeper",
+  "JWT_SECRET": "mytokensecret"
+}

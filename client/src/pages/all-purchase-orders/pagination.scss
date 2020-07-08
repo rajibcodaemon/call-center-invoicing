@@ -1,0 +1,86 @@
+@import "../../assets/sass/mixin";
+@import "../../assets/sass/variables";
+
+.pagination-area {
+  display: flex;
+  margin-top: 30px;
+
+  @include mobile-small{
+    display: block;
+  }
+
+  .rows-area {
+    flex: 1;
+
+    p {
+      color: #222;
+      @include font-size(16);
+
+      @include mobile-small{
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      select {
+        margin-left: 10px;
+        padding: 1px 5px;
+        background-color: transparent;
+        @include border-radius(3px);
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+
+  .pagination-in {
+    flex: 1;
+    justify-self: end;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    @include mobile-small{
+      justify-content: center;
+    }
+
+    p {
+      color: #222;
+      @include font-size(14);
+      margin-right: 15px;
+    }
+
+    ul {
+      li {
+        display: inline;
+        margin-right: 15px;
+        color: $theme-red;
+        font-weight: bold;
+        cursor: pointer;
+
+        &:last-child{
+          margin-right: 0;
+          &:hover{
+            color: $theme-red-hover;
+          }
+        }
+
+        &.number {
+          @include font-size(14);
+          padding: 3px 8px;
+          @include border-radius(3px);
+          background-color: rgba(221, 45, 62, 0.2);
+          color: $theme-red;
+          font-weight: normal;
+          transition: all 0.2s;
+
+          &:hover{
+            background-color: $theme-red;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+@import "../../assets/sass/mixin";
+
+.submit-button-area{
+    max-width: 220px;
+    margin:20px auto 0 auto;
+    
+    @include mobile-small {
+        max-width: 100%;
+      }
+}

@@ -1,0 +1,365 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i&display=swap");
+@import url("https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css");
+@import "./assets/sass/mixin";
+@import "./assets/sass/variables";
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+figure,
+aside,
+article,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.form-group {
+  position: relative;
+
+  .float-input {
+    width: 100%;
+    height: 58px;
+    @include font-size(18);
+    padding: 24px 15px 10px;
+    border-radius: 6px;
+    border: 1px solid #b7b7b7;
+    resize: none;
+    overflow: hidden;
+    color: $text-color;
+
+    @include mobile-small {
+      height: 48px;
+      @include font-size(16);
+    }
+
+    &[filled="true"] {
+      &~label {
+        color: $theme-red;
+        top: 6px;
+        @include font-size(13);
+        font-weight: 600;
+
+        @include mobile-small {
+          top: 4px;
+        }
+      }
+    }
+
+    &.location-search-input{
+      &~label {
+        color: $theme-red;
+        top: 6px;
+        @include font-size(13);
+        font-weight: 600;
+
+        @include mobile-small {
+          top: 4px;
+        }
+      }
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $theme-red;
+
+      &~label {
+        color: $theme-red;
+        top: 6px;
+        @include font-size(13);
+        font-weight: 600;
+
+        @include mobile-small {
+          top: 4px;
+        }
+      }
+    }
+  }
+
+  label {
+    color: #888888;
+    @include font-size(18);
+    font-weight: normal;
+    text-transform: capitalize;
+    position: absolute;
+    left: 16px;
+    top: 16px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+
+    @include mobile-small {
+      top: 12px;
+      @include font-size(16);
+    }
+  }
+
+  &.notes {
+    label {
+      position: relative;
+      display: block;
+      top: auto;
+      left: auto;
+      color: $theme-red;
+      @include font-size(13);
+      font-weight: 600;
+    }
+  }
+
+  textarea {
+    resize: none;
+
+    @include mobile-small {
+      @include font-size(16);
+    }
+  }
+}
+
+.btn {
+  &.btn-danger {
+    width: 100%;
+    height: 58px;
+    border-radius: 6px;
+    background-color: $theme-red;
+    font-weight: 700;
+
+    @include mobile-small {
+      height: 48px;
+    }
+  }
+
+  &.btn-info {
+    @extend .btn-danger;
+    background-color: #34d293;
+    border-color: #34d293;
+
+    &:disabled {
+      opacity: 0.2;
+    }
+  }
+
+  &.btn-warning {
+    @extend .btn-danger;
+    background-color: #ffb93c;
+    color: #fff;
+  }
+}
+
+.forgot-password {
+  text-align: center;
+  margin-top: 20px;
+
+  a {
+    @include font-size(14);
+    text-decoration: underline;
+    color: #fff;
+    cursor: pointer;
+
+    @include mobile-small {
+      margin-top: 15px;
+    }
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+}
+
+.form-group {
+  @include mobile-small {
+    margin-bottom: 10px;
+  }
+}
+
+.content-area {
+  padding-top: 60px;
+  min-height: 100vh;
+  padding-left: 0;
+
+  @include mobile-small {
+    padding-top: 40px;
+  }
+}
+
+.custom-checkbox {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 18px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    background-color: transparent;
+    border: solid 1px #888;
+    border-radius: 3px;
+
+    &:after {
+      content: "";
+      position: absolute;
+      display: none;
+      left: 5px;
+      top: -1px;
+      width: 6px;
+      height: 14px;
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+  }
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+
+    &:checked~.checkmark {
+      background-color: $theme-red;
+      border: 1px solid $theme-red;
+    }
+
+    &:checked~.checkmark:after {
+      display: block;
+    }
+  }
+}
+
+.textarea {
+  @include font-size(18);
+  padding: 10px 15px 10px;
+  @include border-radius(6px);
+  border: 1px solid #b7b7b7;
+  width: 100%;
+  resize: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.search-area {
+  display: flex;
+
+  @include mobile {
+    margin-bottom: 20px;
+  }
+
+  input {
+    max-width: 300px;
+    margin-right: 10px;
+
+    @include mobile {
+      max-width: 100%;
+    }
+  }
+
+  .btn {
+    @include mobile {
+      margin: 0 !important;
+    }
+  }
+}
+
+.main-content {
+  &>.col-md-3 {
+    flex: 0 0 20%;
+    max-width: 20%;
+
+    @include desk {
+      flex: 0 0 25%;
+      max-width: 25%;
+    }
+
+    @include tab {
+      flex: 0 0 30%;
+      max-width: 30%;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &>.col-md-9 {
+    flex: 0 0 80%;
+    max-width: 80%;
+
+    @include desk {
+      flex: 0 0 75%;
+      max-width: 75%;
+    }
+
+    @include tab {
+      flex: 0 0 70%;
+      max-width: 70%;
+    }
+
+    @include mobile {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+}
+
+.error-bg {
+  .modal-content {
+    background-color: #f5e4e5;
+    border-color: $theme-red;
+  }
+}
+
+.right-part {
+  min-height: calc(100vh - 60px);
+
+  @include mobile {
+    min-height: calc(100vh - 40px);
+  }
+}
+
+.error-text {
+  color: $theme-red;
+  @include font-size(14);
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+.autocomplete-dropdown-container{
+  position: absolute;
+  left:0;
+  top:60px;
+  z-index: 100;
+  .suggestion-item{
+    padding:5px 10px;
+    font-size: 14px;
+    border-bottom: 1px dashed #b7b7b7;
+  }
+  .suggestion-item--active{
+    @extend .suggestion-item;
+    background-color: #f5e4e5;
+  }
+}
