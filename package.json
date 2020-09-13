@@ -36,7 +36,7 @@
     "md5": "^2.2.1",
     "moment": "^2.24.0",
     "mysql2": "^1.6.5",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "node-url-shortener": "^1.0.1",
     "react-content-loader": "^4.3.0",
     "react-iframe": "^1.8.0",
